@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Patanjali Yoga Booking - Haridwar</title>
+  <style>
+    :root{--brand:#2e7d32;--accent:#f37021;--wa:#25d366}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#222;background:#f7f7f7}
+    header{background:linear-gradient(90deg,var(--accent),#f98a3a);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px}
+    .logo{height:46px;width:46px;border-radius:8px;background:#fff;color:var(--accent);display:grid;place-items:center;font-weight:800}
+    .title{font-size:18px;margin:0}
+    .subtitle{font-size:12px;margin:0;opacity:.95}
+    .hero{max-width:1100px;margin:18px auto;padding:0 16px}
+    .slider{position:relative;border-radius:12px;overflow:hidden;height:420px;background:#000}
+    .slides{display:flex;height:100%;transition:transform .6s ease}
+    .slide{flex:0 0 100%;height:420px;display:block}
+    .slide img{width:100%;height:420px;object-fit:cover;display:block;filter:contrast(1) saturate(.95)}
+    .tag{position:absolute;left:50%;top:22px;transform:translateX(-50%);background:rgba(0,0,0,.45);color:#fff;padding:10px 16px;border-radius:8px;font-weight:700}
+    .nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:999px;background:rgba(0,0,0,.45);color:#fff;border:none;cursor:pointer;font-size:22px;display:grid;place-items:center}
+    .nav.prev{left:10px} .nav.next{right:10px}
+    .dots{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:8px}
+    .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.6);cursor:pointer}
+    .dot.active{background:#fff}
+    .content{max-width:1100px;margin:18px auto;padding:18px;display:grid;grid-template-columns:1fr;gap:18px}
+    .card{background:#fff;padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(20,20,20,.06)}
+    .center{text-align:center}
+    h2{color:var(--accent);margin:6px 0 12px}
+    p{color:#444;line-height:1.5}
+    .btn{display:inline-block;background:var(--wa);color:#fff;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:700}
+    form.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    form .full{grid-column:1/ -1}
+    label{font-size:13px;font-weight:600;color:#222;display:block;margin-bottom:6px}
+    input,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;font-size:14px}
+    footer{margin-top:18px;padding:18px;text-align:center;color:#666;font-size:13px}
+    @media(max-width:720px){.slides,.slide img{height:320px}.grid{grid-template-columns:1fr}.logo{height:40px;width:40px}.title{font-size:16px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">PY</div>
+    <div>
+      <div class="title">Patanjali Yoga Booking – Haridwar</div>
+      <div class="subtitle">Yoga • Ayurveda • Naturopathy</div>
+    </div>
+  </header>
+
+  <main class="hero">
+    <section class="slider card" aria-label="Image slider">
+      <div class="tag">Patanjali Wellness – Yoga, Ayurveda & Naturopathy in Haridwar</div>
+      <div class="slides" id="slides">
+        <div class="slide"><img src="/mnt/data/A_promotional_digital_advertisement_features_a_you.png" alt="Slide 1"></div>
+        <div class="slide"><img src="/mnt/data/A_promotional_digital_graphic_for_Patanjali_Yoga_B.png" alt="Slide 2"></div>
+        <div class="slide"><img src="/mnt/data/A_digital_screenshot_of_an_online_registration_for.png" alt="Slide 3"></div>
+      </div>
+
+      <button class="nav prev" id="prev" aria-label="Previous">‹</button>
+      <button class="nav next" id="next" aria-label="Next">›</button>
+      <div class="dots" id="dots"></div>
+    </section>
+  </main>
+
+  <section class="content">
+    <div class="card center">
+      <h2>Book Your Wellness Program</h2>
+      <p>Experience holistic healing with Yoga, Ayurveda & Naturopathy at Patanjali, Haridwar. Fill the quick form or directly book on WhatsApp.</p>
+
+      <form id="leadForm" class="grid" onsubmit="return false;">
+        <div>
+          <label>पूरा नाम</label>
+          <input id="name" type="text" placeholder="आपका नाम" required>
+        </div>
+        <div>
+          <label>मोबाइल नंबर</label>
+          <input id="phone" type="tel" placeholder="10 अंकों का नंबर" pattern='[0-9]{10}' required>
+        </div>
+        <div class="full">
+          <label>ईमेल (वैकल्पिक)</label>
+          <input id="email" type="email" placeholder="you@example.com">
+        </div>
+        <div>
+          <label>शहर</label>
+          <input id="city" type="text" placeholder="आपका शहर" required>
+        </div>
+        <div>
+          <label>बुकिंग तारीख</label>
+          <input id="date" type="date" required>
+        </div>
+        <div class="full">
+          <label>समस्या / लक्ष्य</label>
+          <select id="problem">
+            <option>डायबिटीज</option>
+            <option>मोटापा</option>
+            <option>तनाव / चिंता</option>
+            <option>पीठ / घुटना दर्द</option>
+            <option>अन्य</option>
+          </select>
+        </div>
+
+        <div class="full center">
+          <a id="waBtn" class="btn" href="#">📲 WhatsApp से बुक करें</a>
+        </div>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>About Patanjali Yoga – Haridwar</h2>
+      <p>Located in the spiritual city of Haridwar, Patanjali offers natural therapies, Ayurvedic treatments and personalized yoga programs. Rejuvenate your body and mind with trained instructors and authentic Ayurveda.</p>
+      <p><strong>Phone:</strong> +91 9122500446 &nbsp; | &nbsp; <strong>Email:</strong> patanjaliyogbooking@gmail.com</p>
+    </div>
+  </section>
+
+  <footer>© <span id="year"></span> Patanjali Yoga Booking – Haridwar</footer>
+
+  <script>
+    // Slider
+    const slidesEl = document.getElementById('slides');
+    const slidesCount = slidesEl.children.length;
+    let idx = 0;
+    const dots = document.getElementById('dots');
+
+    function renderDots(){
+      dots.innerHTML = '';
+      for(let i=0;i<slidesCount;i++){
+        const d = document.createElement('div');
+        d.className = 'dot' + (i===idx ? ' active' : '');
+        d.onclick = ()=>{ idx = i; update(); resetAuto(); };
+        dots.appendChild(d);
+      }
+    }
+    function update(){
+      slidesEl.style.transform = `translateX(${-idx*100}%)`;
+      renderDots();
+    }
+    document.getElementById('next').onclick = ()=>{ idx = (idx+1)%slidesCount; update(); resetAuto(); };
+    document.getElementById('prev').onclick = ()=>{ idx = (idx-1+slidesCount)%slidesCount; update(); resetAuto(); };
+
+    let auto = setInterval(()=>{ idx = (idx+1)%slidesCount; update(); }, 4500);
+    function resetAuto(){ clearInterval(auto); auto = setInterval(()=>{ idx = (idx+1)%slidesCount; update(); }, 4500); }
+    renderDots(); update();
+
+    // WhatsApp booking button
+    const waBtn = document.getElementById('waBtn');
+    waBtn.addEventListener('click', ()=>{
+      const name = encodeURIComponent(document.getElementById('name').value || '-');
+      const phone = encodeURIComponent(document.getElementById('phone').value || '-');
+      const email = encodeURIComponent(document.getElementById('email').value || '-');
+      const city = encodeURIComponent(document.getElementById('city').value || '-');
+      const date = encodeURIComponent(document.getElementById('date').value || '-');
+      const problem = encodeURIComponent(document.getElementById('problem').value || '-');
+      const message = `नमस्ते, मैं Patanjali Yoga Booking करना चाहता/चाहती हूँ.%0Aनाम: ${name}%0Aमोबाइल: ${phone}%0Aईमेल: ${email}%0Aशहर: ${city}%0Aतारीख: ${date}%0Aसमस्या: ${problem}`;
+      window.location.href = `https://wa.me/919122500446?text=${message}`;
+    });
+
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
